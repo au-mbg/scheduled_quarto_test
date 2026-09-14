@@ -1,0 +1,30 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Scheduled Quarto documents"
+  description: "A small demonstration of date-based Quarto publication"
+  draft-mode: gone
+  navbar:
+    left:
+      - href: index.qmd
+        text: Overview
+      - href: pages/already-released.qmd
+        text: Already released
+      - href: pages/scheduled-release.qmd
+        text: Scheduled release
+      - href: pages/manually-published.qmd
+        text: Manual publish
+      - href: pages/manually-withheld.qmd
+        text: Manual withhold
+
+metadata-files:
+  - scheduled-docs_files/draft-list.yml
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+

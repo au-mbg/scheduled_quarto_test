@@ -1,0 +1,40 @@
+---
+title: "Scheduled releases with Quarto"
+---
+
+This site is a compact demonstration of the
+[`scheduled-docs`](https://github.com/qmd-lab/scheduled-docs) extension. The
+source contains every example page from the beginning, while each full render
+uses the central release calendar to decide which pages belong on the public
+site.
+
+::: {.callout-note title="Two pieces working together"}
+The extension controls **what is visible when the site is rendered**. GitHub
+Actions controls **when the site is rendered and deployed again**.
+:::
+
+## Demonstrated states
+
+| Example | Date | Override | Expected public state |
+|---|---:|---:|---|
+| [Already released](pages/already-released.qmd) | 2020-01-01 | — | Published |
+| [Scheduled release](pages/scheduled-release.qmd) | 2026-09-15 | — | Published on or after the date |
+| [Manually published](pages/manually-published.qmd) | 2099-01-01 | `draft: false` | Published |
+| Manually withheld | 2020-01-01 | `draft: true` | Hidden |
+
+If a link in the table is plain text rather than clickable, Quarto classified
+that destination as a draft during this render.
+
+## Publication flow
+
+```{mermaid}
+flowchart LR
+    A["_schedule.yml"] --> B["scheduled-docs"]
+    B --> C["Quarto render"]
+    D["Hourly GitHub Action"] --> C
+    C --> E["GitHub Pages"]
+```
+
+The repository README contains the local commands and a fixed-date simulation
+procedure.
+

@@ -1,0 +1,10 @@
+---
+title: "Already released"
+---
+
+This page has a release date of **2020-01-01**. With the normal system-time
+configuration, it is part of every current public render.
+
+Its visibility comes directly from its past date; it has no manual `draft`
+override.
+

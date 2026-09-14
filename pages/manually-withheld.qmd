@@ -1,0 +1,10 @@
+---
+title: "Manually withheld"
+---
+
+This page is dated **2020-01-01**, but its schedule entry contains `draft: true`.
+The override keeps it out of the public site even though its date has passed.
+
+If this content appears on a deployed production render, the scheduling setup
+is not behaving as intended.
+

@@ -1,0 +1,22 @@
+:root {
+  --demo-ink: #172b3a;
+  --demo-accent: #0f6b78;
+}
+
+body {
+  color: var(--demo-ink);
+}
+
+.navbar {
+  border-bottom: 3px solid var(--demo-accent);
+}
+
+h1,
+h2 {
+  letter-spacing: -0.02em;
+}
+
+.callout-note {
+  border-left-color: var(--demo-accent);
+}
+

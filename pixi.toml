@@ -1,0 +1,26 @@
+[workspace]
+authors = ["Aarhus University MBG"]
+channels = ["conda-forge"]
+name = "scheduled-quarto-test"
+platforms = ["osx-arm64", "linux-64", "osx-64", "win-64"]
+version = "0.1.0"
+
+[tasks.preview]
+cmd = "quarto preview"
+description = "Preview the site; Quarto displays drafts in preview mode"
+
+[tasks.render]
+cmd = "quarto render"
+description = "Render the production site with scheduled drafts removed"
+
+[tasks.serve]
+cmd = "python -m http.server --directory _site"
+description = "Serve the completed production render for inspection"
+
+[tasks.clean]
+cmd = "rm -rf _site .quarto"
+description = "Remove generated site artifacts"
+
+[dependencies]
+python = "3.12.*"
+quarto = ">=1.8.27,<2"

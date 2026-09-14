@@ -1,0 +1,10 @@
+---
+title: "Scheduled release"
+---
+
+This page has a release date of **2026-09-15 UTC**.
+
+Before that date, the extension marks it as a draft. On or after that date, the
+next scheduled GitHub Actions render includes it in the public site without a
+new source commit.
+

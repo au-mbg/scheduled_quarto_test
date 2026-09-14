@@ -1,0 +1,10 @@
+---
+title: "Manually published"
+---
+
+This page is dated **2099-01-01**, but its schedule entry contains
+`draft: false`. That explicit override makes the page public immediately.
+
+This is useful when material must be released earlier than planned without
+changing the planned date.
+
