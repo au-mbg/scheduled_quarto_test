@@ -2,6 +2,10 @@ project:
   type: website
   output-dir: _site
 
+profile:
+  group:
+    - [student, instructor]
+
 website:
   title: "Scheduled Quarto documents"
   description: "A small demonstration of date-based Quarto publication"
@@ -21,6 +25,10 @@ website:
 
 metadata-files:
   - scheduled-docs_files/draft-list.yml
+
+filters:
+  - callout-solution
+  - strip-solution
 
 format:
   html:

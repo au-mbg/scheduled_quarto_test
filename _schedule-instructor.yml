@@ -1,0 +1,14 @@
+scheduled-docs:
+  draft-after: "system-time"
+  timezone: "+00:00"
+  docs:
+    - href: pages/already-released.qmd
+      date: "2020-01-01"
+    - href: pages/scheduled-release.qmd
+      date: "2026-09-16"
+    - href: pages/manually-published.qmd
+      date: "2099-01-01"
+      draft: false
+    - href: pages/manually-withheld.qmd
+      date: "2020-01-01"
+      draft: true

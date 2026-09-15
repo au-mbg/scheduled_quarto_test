@@ -8,3 +8,19 @@ configuration, it is part of every current public render.
 Its visibility comes directly from its past date; it has no manual `draft`
 override.
 
+## Shared-source teaching example
+
+What is the release date of this page?
+
+::: {teaching="exercise"}
+Complete the statement: this page was released on **____-__-__**.
+:::
+
+::: {teaching="solution"}
+Completed statement: this page was released on **2020-01-01**.
+:::
+
+::: {.callout-solution title="Why this page is public"}
+The page date is earlier than the schedule's comparison date and there is no
+manual override, so `scheduled-docs` classifies it as published.
+:::

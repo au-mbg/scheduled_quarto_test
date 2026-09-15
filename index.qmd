@@ -4,9 +4,9 @@ title: "Scheduled releases with Quarto"
 
 This site is a compact demonstration of the
 [`scheduled-docs`](https://github.com/qmd-lab/scheduled-docs) extension. The
-source contains every example page from the beginning, while each full render
-uses the central release calendar to decide which pages belong on the public
-site.
+source contains every example page from the beginning. Student and instructor
+profiles filter teaching content and use separate calendars to decide which
+pages belong in each public version.
 
 ::: {.callout-note title="Two pieces working together"}
 The extension controls **what is visible when the site is rendered**. GitHub
@@ -18,7 +18,7 @@ Actions controls **when the site is rendered and deployed again**.
 | Example | Date | Override | Expected public state |
 |---|---:|---:|---|
 | [Already released](pages/already-released.qmd) | 2020-01-01 | — | Published |
-| [Scheduled release](pages/scheduled-release.qmd) | 2026-09-15 | — | Published on or after the date |
+| [Scheduled release](pages/scheduled-release.qmd) | Student: 2026-09-15; instructor: 2026-09-16 | — | Published on or after the profile's date |
 | [Manually published](pages/manually-published.qmd) | 2099-01-01 | `draft: false` | Published |
 | Manually withheld | 2020-01-01 | `draft: true` | Hidden |
 
@@ -29,12 +29,13 @@ that destination as a draft during this render.
 
 ```{mermaid}
 flowchart LR
-    A["_schedule.yml"] --> B["scheduled-docs"]
-    B --> C["Quarto render"]
-    D["Hourly GitHub Action"] --> C
-    C --> E["GitHub Pages"]
+    A["Profile schedule"] --> B["Pixi selector"]
+    B --> C["_schedule.yml"]
+    C --> D["scheduled-docs"]
+    D --> E["Quarto profile render"]
+    F["Hourly GitHub Action"] --> E
+    E --> G["Student root + instructor subsite"]
 ```
 
 The repository README contains the local commands and a fixed-date simulation
 procedure.
-

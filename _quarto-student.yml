@@ -1,0 +1,13 @@
+project:
+  output-dir: _site
+
+website:
+  navbar:
+    right:
+      - href: instructor/index.html
+        text: Instructor version
+        icon: book-fill
+
+teaching:
+  show-solutions: false
+

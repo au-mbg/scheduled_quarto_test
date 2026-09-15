@@ -2,9 +2,11 @@
 title: "Scheduled release"
 ---
 
-This page has a release date of **2026-09-15 UTC**.
+This page has separate release dates for the two public profiles:
 
-Before that date, the extension marks it as a draft. On or after that date, the
-next scheduled GitHub Actions render includes it in the public site without a
-new source commit.
+- **Student:** 2026-09-15 UTC
+- **Instructor:** 2026-09-16 UTC
 
+Before the applicable date, the extension marks this page as a draft for that
+profile. On or after the date, the next scheduled GitHub Actions render includes
+it without a new source commit.

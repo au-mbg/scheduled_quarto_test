@@ -1,0 +1,20 @@
+project:
+  output-dir: _site/instructor
+
+website:
+  navbar:
+    right:
+      - href: ../index.html
+        text: Student version
+        icon: book
+  announcement:
+    icon: exclamation-triangle
+    dismissable: false
+    content: "Public demo: this instructor version contains solutions. Quarto profiles separate content but do not provide access control."
+    type: warning
+    position: below-navbar
+
+teaching:
+  show-solutions: true
+  default-solution-title: "Solution"
+

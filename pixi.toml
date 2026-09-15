@@ -6,12 +6,19 @@ platforms = ["osx-arm64", "linux-64", "osx-64", "win-64"]
 version = "0.1.0"
 
 [tasks.preview]
-cmd = "quarto preview"
-description = "Preview the site; Quarto displays drafts in preview mode"
+args = [{ "arg" = "profile", default = "student", choices = ["student", "instructor"] }]
+cmd = "python scripts/render_profile.py preview {{profile}}"
+description = "Preview the student or instructor profile; Quarto displays drafts in preview mode"
 
 [tasks.render]
-cmd = "quarto render"
-description = "Render the production site with scheduled drafts removed"
+args = [{ "arg" = "profile", default = "student", choices = ["student", "instructor"] }]
+cmd = "python scripts/render_profile.py render {{profile}}"
+description = "Render one profile with its release calendar"
+
+[tasks.render-all]
+cmd = "python scripts/render_profile.py render-all"
+depends-on = ["clean"]
+description = "Render the student site followed by the instructor subsite"
 
 [tasks.serve]
 cmd = "python -m http.server --directory _site"
@@ -20,6 +27,10 @@ description = "Serve the completed production render for inspection"
 [tasks.clean]
 cmd = "rm -rf _site .quarto"
 description = "Remove generated site artifacts"
+
+[tasks.publish]
+cmd = "gh workflow run publish.yml --ref main && gh run watch --exit-status"
+description = "Trigger the GitHub Pages workflow and wait for completion"
 
 [dependencies]
 python = "3.12.*"
